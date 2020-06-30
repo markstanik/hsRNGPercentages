@@ -1,5 +1,5 @@
 import API
-import HScards
+import calculations
 #SET TAGS IN JSON: idk how they named it so here are the tags in the json file
 #Basic: CORE
 #Classic: EXPERT1
