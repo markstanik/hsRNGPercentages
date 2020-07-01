@@ -12,7 +12,7 @@ import calculations
 
 
 cards = API.create_list()
-#print(HScards.summon(cards, 1, -1, 'DEMON', 'ANY', 'TAUNT'))
+print(calculations.summon(cards, 1, None, 'DEMON', None, 'TAUNT', None, None))
 
 
 
