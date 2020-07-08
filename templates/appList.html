@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block head %}{% endblock %}
+
+{% block body %}
+
+<div class="list-group cards">
+  {% for card in content %}
+      <a href="CalcFrontEnd" class="list-group-item list-group-item-action">{{card}}</a>
+  {% endfor %}
+
+</div>
+{% endblock %}

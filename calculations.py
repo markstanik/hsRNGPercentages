@@ -8,7 +8,7 @@ from probability import prob
 # target_class: if discovering a minion the name of the class, otherwise ANY
 # keyword: the keyword you are looking for
 def summon(cards, num_minions, cost, race, target_class, keyword, rarity, discover):
-    # summoning/mutating any minion, not discover
+    # summoning any minion
     minions_df = cards.loc[cards['type'] == 'MINION']
     parameters = [cost, race, target_class, rarity]
     json_names = ['cost', 'race', 'cardClass', 'rarity']
@@ -18,11 +18,10 @@ def summon(cards, num_minions, cost, race, target_class, keyword, rarity, discov
             del json_names[i]
         else:
             minions_df = minions_df.loc[minions_df[json_names[i]] == parameters[i]]
-
     m_count = minions_df.shape[0]
     keyword_df = minions_df.loc[minions_df[keyword] == True]
     k_count = keyword_df.shape[0]
-    output = prob(m_count, k_count, num_minions)
+    output = prob(m_count, k_count, num_minions, discover)
     return output
 
 # card_type: if it is minion, spell, or weapon, or ALL
